@@ -18,8 +18,8 @@ router.get('/exercise/:id', (req, res) => {
 })
 
 // to stats.js (Dashboard)
-router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '../../public/stats.js'))
+router.get('/stats', (req, res) => {
+    res.sendFile(path.join(__dirname + '../../public/stats.html'))
 })
 
 module.exports = router;
