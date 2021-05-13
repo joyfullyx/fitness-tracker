@@ -35,6 +35,7 @@ module.exports = (app) => {
     // get stats
     app.get('/api/workouts/range', (req, res) => {
         Workout.find({})
+        .limit(7)
         .then((dbWorkout) => {
             res.json(dbWorkout);
         })
