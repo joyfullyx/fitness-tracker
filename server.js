@@ -15,7 +15,15 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { dbName: 'workout', useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true });
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/workout",
+  { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,  
+  }
+);
 
 app.use(require('./controllers/htmlRoutes'));
 // app.use(require('./controllers/apiRoutes'))
